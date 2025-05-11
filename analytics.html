@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    body.dark-mode {
+      background-color: #333;
+      color: #f4f4f9;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #555;
+    }
+    .dark-mode .card h2 {
+      color: #ddd;
+    }
+    .dark-mode .card {
+      background-color: #444;
+      color: #fff;
+    }
+    .iframe-slider h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #555;
+    }
+    .dark-mode .iframe-slider h2 {
+      color: #ddd;
+    }
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* Adjust this value based on the aspect ratio of your iframes */
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+    /* Iframe Slider */
+    .iframe-slider-container {
+      margin-top: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .iframe-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 20px; /* Add padding to the slider container */
+    }
+    .iframe-slide {
+      min-width: 90%;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      height: 300px; /* Fixed height for iframe-slide */
+      padding: 0 20px; /* Add padding to the left and right of the slide */
+      box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+    .iframe-slide iframe {
+      width: 100%;
+      height: 100%; /* Make iframe fill the slide */
+      border: none;
+    }
+    /* Dark Mode Toggle Button */
+    .mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .mode-toggle.light {
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .mode-toggle:hover {
+      transform: scale(1.1);
+    }
+    /* Swipe for more text */
+    .swipe-text {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.5em;
+      color: #777;
+    }
+    .dark-mode .swipe-text {
+      color: #aaa;
+    }
+    @media (max-width: 768px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dark Mode Toggle Button -->
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- Swipable Iframe Section -->
+  <div class="swipe-text">Total Attendance Report 》》》</div>
+  <div class="iframe-slider-container">
+    <div class="iframe-slider" id="iframeSlider1">
+      <div class="iframe-slide">
+        <h2>OVERALL</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=650683961&format=interactive"></iframe>
+      </div>
+      <div class="iframe-slide">
+        <h2>SERVICE ANALYTICS</h2>
+        <iframe seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1669610409&format=interactive"></iframe>
+      </div>
+      <div class="iframe-slide">
+        <h2>TOP ATTENDEE</h2>
+        <iframe seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=821677005&format=interactive"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <div class="card">
+      <h2>KPI RESULTS</h2>
+      <div class="iframe-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=522152220&format=interactive" frameborder="0" scrolling="auto"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <h2>REACHEDOUT</h2>
+      <div class="iframe-container">
+        <iframe seamless frameborder="0" scrolling="auto" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=980434300&format=interactive"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <h2>WORKFORCE</h2>
+      <div class="iframe-container">
+        <iframe seamless frameborder="0" scrolling="auto" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=603702968&format=interactive"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <h2>MARITAL STATUS</h2>
+      <div class="iframe-container">
+        <iframe seamless frameborder="0" scrolling="auto" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1656246975&format=interactive"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <h2>DEPARTMENTS</h2>
+      <div class="iframe-container">
+        <iframe seamless frameborder="0" scrolling="auto" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=948541933&format=interactive"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <h2>INVENTORY</h2>
+      <div class="iframe-container">
+        <iframe seamless frameborder="0" scrolling="auto" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1960682521&format=interactive"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swipable Iframe Section -->
+  <div class="swipe-text">Swipe for more...</div>
+  <div class="iframe-slider-container">
+    <div class="iframe-slider" id="iframeSlider2">
+      <div class="iframe-slide">
+        <h2>EVENT ANALYTICS</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1531323673&format=interactive"></iframe>
+      </div>
+      <div class="iframe-slide">
+        <h2>FIRST-TIMERS</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1290302978&format=interactive" frameborder="0" scrolling="auto"></iframe>
+      </div>
+      <div class="iframe-slide">
+        <h2>EMERGENCY CONTACT</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSP9Unbuyw5f8tg06H7eEo3JUTuI5E0IH7Pl2mVjQYcAoIUG_4eEETSKirTCxpvI1XZMsQcYZAdjKr0/pubchart?oid=1223093644&format=interactive" frameborder="0" scrolling="auto"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const toggleButton = document.querySelector('.mode-toggle');
+
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️';
+        toggleButton.classList.add('light');
+      } else {
+        toggleButton.textContent = '🌙';
+        toggleButton.classList.remove('light');
+      }
+    }
+
+    // Swiping logic for both sliders
+    const sliders = [document.getElementById("iframeSlider1"), document.getElementById("iframeSlider2")];
+
+    sliders.forEach(slider => {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust for sensitivity
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      slider.addEventListener("touchstart", (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("touchend", () => {
+        isDown = false;
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    });
+  </script>
+</body>
+</html>
