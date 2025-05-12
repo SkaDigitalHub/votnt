@@ -29,7 +29,7 @@
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
             width: 100%;
-            padding: 1rem 2rem;
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,21 +46,22 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            margin-left: 1.0rem;
-            padding: 0.93rem;
+            padding: 0.5rem 1rem;
 
         }
 
         .app-title {
+            margin: 0;
             font-weight: 600;
             font-size: 1.25rem;
+            flex-grow: 1;
+            text-align: center;
             position: fixed;       
         }
 
-        img {
-            width: 3.13rem;
-            height: 3.13rem;
-            padding: 0.93rem;
+        .app-logo {
+            width: auto;
+            height: 2.5rem;
             object-fit: cover;
         }
 
@@ -96,7 +97,7 @@
             width: 3.13rem;
             height: 3.13rem;
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 0.93rem;
             object-fit: cover;
             border: 0.13rem solid white;
         }
@@ -324,7 +325,8 @@ body {
             <button class="menu-btn" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            <h1 class="app-title"><img src="img/logo.png"><span>WACI Dashboard</span></h1>
+            <h1 class="app-title">WACI Dashboard</h1>
+            <img  class="app-logo" src="img/logo.png" alt="App logo">
             <div style="width: 1.5rem;"></div> <!-- Spacer for balance -->
         </header>
         
