@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WACI Funds Recording</title>
+    <title>WACI Dues Recording</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { 
@@ -532,11 +532,11 @@
                     <i class="fa-solid fa-calendar-plus"></i>
                     <span>Event</span>
                 </a>
-                <a href="fund.html" class="menu-item active">
+                <a href="fund.html" class="menu-item">
                     <i class="fa-solid fa-wallet"></i>
                     <span>Fund</span>
                 </a>
-                <a href="dues.html" class="menu-item">
+                <a href="dues.html" class="menu-item active">
                     <i class="fa-solid fa-coins"></i>
                     <span>Dues</span>
                 </a>
@@ -556,54 +556,34 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="form-container">
-                <h1>WACI Funds Recording</h1>
-        <form id="attendanceForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd7TPqdsPJy7FEAXON52k_Zd9fgW_lgP6Vey8j1UV3PBQ5jWw/formResponse" method="POST">       
+                <h1>WACI Dues Recording</h1>
+        <form id="attendanceForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdmURCTEM2NUZwJww8k0Rx-InpH-FuTRph47rcOGYLi5ele2g/formResponse" method="POST">       
 
-            <div class="form-group">
-                <label for="service">Service:</label>
-                <select id="service" name="entry.1726713414" required>
-                    <option value="" disabled selected>Select service</option>
-                    <option value="Sunday—Morning">Sunday—Morning</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Sunday—Evening">Sunday—Evening</option>
-                </select>
+<div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="entry.681308786" required placeholder="Enter your full name">
             </div>
 
 <div class="form-group">
-  <label for="tithe">Tithe</label>
+  <label for="dues">Dues (GH¢)</label>
   <input 
-    type="number" id="tithe" name="entry.549164700" required 
-    placeholder="Enter Tithe amount" step="0.01" min="0" oninput="validity.valid || (value = '');">
-</div>
-
-<div class="form-group">
-  <label for="offering">Offering</label>
-  <input 
-    type="number" id="offering" name="entry.1930708020" required 
-    placeholder="Enter Offering amount" step="0.01" min="0" oninput="validity.valid || (value = '');">
-</div>
-
-<div class="form-group">
-  <label for="seed">Seed</label>
-  <input 
-    type="number" id="seed" name="entry.1665421464" required 
-    placeholder="Enter Seed amount" step="0.01" min="0" oninput="validity.valid || (value = '');">
+    type="number" id="tithe" name="entry.87582508" required 
+    placeholder="Enter amount" step="0.01" min="0" oninput="validity.valid || (value = '');">
 </div>
 
             <div class="form-group">
                 <label for="date">Date:</label>
-                <input type="date" id="date" name="entry.691389769" required>
+                <input type="date" id="date" name="entry.1294295555" required>
             </div>
 
             <button type="submit" id="submitBtn">Submit</button>
         </form>
 
         <div id="successMessage" class="success-message">
-            <h2>Funds Submitted Successfully!</h2>
+            <h2>Dues Submitted Successfully!</h2>
             <p>Thank you</p>
         </div>
-    </div>
+            </div>
         </main>
     </div>
 
