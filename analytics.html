@@ -141,13 +141,15 @@
 </head>
 <body>
 
-  <header class="header">
-    <button class="menu-btn" id="menuBtn">
-        <i class="fas fa-bars"></i>
-    </button>
-    <h1 class="app-title">WACI Dashboard</h1>
-    <div style="width: 1.5rem;"></div>
-  </header>
+      <div class="app-container" id="appContainer">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="app-title">WACI Dashboard</h1>
+            <div style="width: 1.5rem;"></div>
+        </header>
 
         <!-- Side Menu -->
         <div class="side-menu" id="sideMenu">
@@ -208,9 +210,6 @@
 
         <!-- Main Content -->
         <main class="main-content">
-  
-  <!-- Dark Mode Toggle Button -->
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle dark mode">🌙</button>
 
   <!-- Swipable Iframe Section -->
   <div class="swipe-text">Total Attendance Report 》》》</div>
@@ -288,7 +287,9 @@
       </div>
     </div>
   </div>
-  
+    
+  <!-- Dark Mode Toggle Button -->
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle dark mode">🌙</button>
 <script src="script.js"></script>
   
   <script>
