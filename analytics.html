@@ -136,8 +136,79 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+  <header class="header">
+    <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <h1 class="app-title">WACI Dashboard</h1>
+    <div style="width: 1.5rem;"></div>
+  </header>
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <img src="img/logo.png" alt="User">
+                <div class="user-info">
+                    <h3>WACI ADMIN PORTAL</h3>
+                    <p>Admin</p>
+                </div>
+            </div>
+            
+            <div class="menu-items">
+                <a href="index.html" class="menu-item">
+                    <i class="fa-solid fa-gauge"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="analytics.html" class="menu-item active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="attendance.html" class="menu-item">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span>Weekly Attendance</span>
+                </a>
+                <a href="registration.html" class="menu-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Registration</span>
+                </a>
+                <a href="firsttimers.html" class="menu-item">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>First-timer's</span>
+                </a>
+                <a href="event.html" class="menu-item">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    <span>Event</span>
+                </a>
+                <a href="fund.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Fund</span>
+                </a>
+                <a href="dues.html" class="menu-item">
+                    <i class="fa-solid fa-coins"></i>
+                    <span>Dues</span>
+                 </a>
+                <a href="projects.html" class="menu-item">
+                    <i class="fa-solid fa-receipt"></i>
+                    <span>Funded Projects</span>
+                </a>
+            </div>
+            
+            <div class="menu-footer">
+                <p>Version 1.0.0</p>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+  
   <!-- Dark Mode Toggle Button -->
   <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle dark mode">🌙</button>
 
@@ -217,7 +288,9 @@
       </div>
     </div>
   </div>
-
+  
+<script src="script.js"></script>
+  
   <script>
     function toggleMode() {
       const body = document.body;
