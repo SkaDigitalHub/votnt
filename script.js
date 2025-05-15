@@ -75,12 +75,6 @@
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
 
-            // Set today's date as default
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('date').value = today;
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
 
                 // Show loading state
                 submitBtn.disabled = true;
