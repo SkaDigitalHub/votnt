@@ -607,7 +607,7 @@
 
           <div class="form-group">
                 <label for="event">Today's Experience</label>
-                <input type="text" id="event" name="entry.2011810776" required placeholder="Share your experience">
+                <textarea type="text" id="event" name="entry.2011810776" required placeholder="Share your experience" row="3"></textarea>
             </div>  
 
             <button type="submit" id="submitBtn">Submit</button>
@@ -618,7 +618,7 @@
             <p>Thank you for checking in.</p>
         </div>
     </div>
-
+        </main>
 
     <script>
         // Dark Mode Toggle
@@ -657,4 +657,84 @@
             menuItems.forEach(item => {
                 if (item.getAttribute('href') === currentPage) {
                     item.classList.add('active');
-          
+                }
+            });
+
+            // Toggle menu
+            menuBtn.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                overlay.classList.toggle('active');
+            });
+
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+            });
+
+            // Swipe to close functionality for touch devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50 && sideMenu.classList.contains('open')) {
+                    sideMenu.classList.remove('open');
+                    overlay.classList.remove('active');
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('attendanceForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+                
+                // Create a hidden iframe for submission
+                const iframe = document.createElement('iframe');
+                iframe.name = 'formTarget';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                
+                // Set form target to the iframe
+                form.target = 'formTarget';
+                
+                // Handle the load event of the iframe
+                iframe.onload = function() {
+                    // Hide the form
+                    form.style.display = 'none';
+                    
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit';
+                    
+                    // Remove the iframe after submission
+                    document.body.removeChild(iframe);
+                };
+                
+                // Submit the form
+                form.submit();
+            });
+        });
+     </script>
+   </body>
+</html>
