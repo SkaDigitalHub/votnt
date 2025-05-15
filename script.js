@@ -1,4 +1,4 @@
-       // Dark Mode Toggle
+// Dark Mode Toggle
         function toggleMode() {
             const body = document.body;
             const toggleButton = document.querySelector('.mode-toggle');
@@ -75,36 +75,39 @@
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
 
-
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
                 // Show loading state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Submitting...';
-
+                
                 // Create a hidden iframe for submission
                 const iframe = document.createElement('iframe');
                 iframe.name = 'formTarget';
                 iframe.style.display = 'none';
                 document.body.appendChild(iframe);
-
+                
                 // Set form target to the iframe
                 form.target = 'formTarget';
-
+                
                 // Handle the load event of the iframe
                 iframe.onload = function() {
                     // Hide the form
                     form.style.display = 'none';
-
+                    
                     // Show success message
                     successMessage.style.display = 'block';
-
+                    
                     // Reset button state
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'Submit';
-
+                    
                     // Remove the iframe after submission
                     document.body.removeChild(iframe);
                 };
-
+                
                 // Submit the form
                 form.submit();
             });
