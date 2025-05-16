@@ -78,7 +78,8 @@
             <div class="form-container">
                 <h1 style="color: #f4f4f9">WACI NEW</h1>
         <form id="attendanceForm" action="https://docs.google.com/forms/d/e/1FAIpQLSf6_zXerzuro3IPz8gH6bOK4W3PnY6lxPFyCV1NuWAaRMkkyw/formResponse" method="POST">       
-
+<fieldset>
+    <legend>Personal Information</legend>
 <div class="form-group">
                 <label for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="entry.263580281" required placeholder="Enter your full name">
@@ -94,8 +95,9 @@
 <div class="form-group">
                 <label for="address">Address</label>
                 <input type="text" id="address" name="entry.1174278439" required placeholder="Enter your location">
-            </div>
-          
+</div>   
+</fieldset> 
+            
    <div class="form-group">
                 <label for="invited">Invited By</label>
                 <input type="text" id="invited" name="entry.1387506406" required placeholder="Enter full name">
@@ -113,7 +115,7 @@
           
     <div class="form-group">
                 <label for="experience">Today's Experience</label>
-                <input type="text" id="experience" name="entry.635078846" required placeholder="Share experience">
+                <textarea id="experience" name="entry.635078846" required placeholder="Share experience" row="3"></textrea>
             </div> 
           
             <button type="submit" id="submitBtn">Submit</button>
