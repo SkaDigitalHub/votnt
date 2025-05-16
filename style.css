@@ -355,7 +355,7 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        input, select { 
+        input, select textarea { 
             width: 100%; 
             padding: 15px 20px; 
             background: rgba(255, 255, 255, 0.1); 
@@ -366,19 +366,7 @@
             transition: all 0.3s ease; 
             outline: none; 
         } 
-
-        textarea {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: var(--border);
-            border-radius: 12px;
-            font-size: 1rem;
-            color: white;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
+        
         body.dark-mode input,
         body.dark-mode select 
         body.dark-mode textarea {
