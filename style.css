@@ -93,7 +93,7 @@
             background: white;
             box-shadow: 0.13rem 0 0.94rem rgba(0, 0, 0, 0.1);
             z-index: 100;
-            transition: left 0.3s ease, background 0.3s ease;
+            transition: left 0.2s ease-in-out, background 0.2s ease-in-out;
             display: flex;
             flex-direction: column;
         }
@@ -207,7 +207,7 @@
             z-index: 50;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease-in-out;
         }
 
         .overlay.active {
@@ -287,9 +287,7 @@
             border: var(--border); 
             box-shadow: var(--shadow); 
             padding: 40px; 
-            display: flex;
             justify-content: center;
-            align-items: center;
             animation: fadeIn 0.8s ease-in-out; 
             transform-style: preserve-3d; 
             transition: all 0.5s ease; 
@@ -368,7 +366,8 @@
         } 
 
         body.dark-mode input,
-        body.dark-mode select {
+        body.dark-mode select 
+        body.dark-mode textarea {
             background: rgba(30, 30, 30, 0.5);
             border: var(--border-dark);
             color: #f4f4f9;
