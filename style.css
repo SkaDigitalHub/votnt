@@ -219,6 +219,9 @@
         .main-content {
             padding: 5rem 0.1rem 1rem;
             min-height: calc(100vh - 3.75rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Dark Mode Toggle Button - Protected from other button styles */
@@ -286,8 +289,7 @@
             border-radius: 20px; 
             border: var(--border); 
             box-shadow: var(--shadow); 
-            padding: 40px; 
-            justify-content: center;
+            padding: 40px;
             animation: fadeIn 0.8s ease-in-out; 
             transform-style: preserve-3d; 
             transition: all 0.5s ease; 
@@ -353,7 +355,7 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        input, select, textarea { 
+        input, select { 
             width: 100%; 
             padding: 15px 20px; 
             background: rgba(255, 255, 255, 0.1); 
@@ -364,6 +366,18 @@
             transition: all 0.3s ease; 
             outline: none; 
         } 
+
+        textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            color: white;
+            transition: all 0.3s ease;
+            outline: none;
+        }
 
         body.dark-mode input,
         body.dark-mode select 
