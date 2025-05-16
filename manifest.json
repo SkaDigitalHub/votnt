@@ -1,7 +1,7 @@
 {
   "name": "WACI Administrative App",
   "short_name": "Admin_WACI",
-  "start_url": "/",
+  "start_url": "/waci/index.html",
   "display": "standalone",
   "background_color": "green",
   "theme_color": "#8A1878",
