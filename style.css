@@ -355,7 +355,7 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        input, select textarea { 
+        input, select, textarea { 
             width: 100%; 
             padding: 15px 20px; 
             background: rgba(255, 255, 255, 0.1); 
