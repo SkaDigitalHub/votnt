@@ -368,7 +368,7 @@
         } 
         
         body.dark-mode input,
-        body.dark-mode select 
+        body.dark-mode select, 
         body.dark-mode textarea {
             background: rgba(30, 30, 30, 0.5);
             border: var(--border-dark);
