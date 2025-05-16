@@ -219,6 +219,9 @@
         .main-content {
             padding: 5rem 0.1rem 1rem;
             min-height: calc(100vh - 3.75rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Dark Mode Toggle Button - Protected from other button styles */
