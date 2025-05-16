@@ -286,10 +286,7 @@
             background: var(--glass); 
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px); 
-            border-radius: 20px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-radius: 20px;            
             border: var(--border); 
             box-shadow: var(--shadow); 
             padding: 40px; 
