@@ -1,9 +1,9 @@
 {
-  "name": "WACI Administrative App",
-  "short_name": "Admin_WACI",
-  "start_url": "/waci/index.html",
+  "name": "Vision Of The New Temple Administrative App",
+  "short_name": "VOTNT_WACI",
+  "start_url": "/votnt/index.html",
   "display": "standalone",
-  "background_color": "green",
+  "background_color": "wine",
   "theme_color": "#8A1878",
   "icons": [
     {
