@@ -1,4 +1,4 @@
-const CACHE_NAME = 'WACI-Admin-App-v1';  // ← Versioned for updates
+const CACHE_NAME = 'Vision Of The New Temple-Admin-App-v1';  // ← Versioned for updates
 const urlsToCache = [
   './',                // Relative to the service worker's path
   './index.html',
