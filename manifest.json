@@ -1,6 +1,6 @@
 {
   "name": "Vision Of The New Temple Administrative App",
-  "short_name": "VOTNT_WACI",
+  "short_name": "VOTNT_Admin",
   "start_url": "/votnt/index.html",
   "display": "standalone",
   "background_color": "wine",
